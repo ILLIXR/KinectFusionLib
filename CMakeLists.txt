@@ -12,7 +12,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 #                 Dependencies
 # ------------------------------------------------
 ## CUDA
-find_package(CUDA 8.0 REQUIRED)
+find_package(CUDA 10.2 REQUIRED)
 IF (CUDA_FOUND)
     include_directories("${CUDA_INCLUDE_DIRS}")
     # Optional: Specify the arch of your CUDA hardware here
