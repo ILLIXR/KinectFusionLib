@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(KinectFusionLib)
 
 # Use modern C++
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 # Setting output paths
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -45,5 +45,5 @@ set(PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 include_directories("${PROJECT_INCLUDE_DIR}" "${PROJECT_SOURCE_DIR}/cuda/include")
 file(GLOB KinectFusion_SRCS "${PROJECT_SOURCE_DIR}/cuda/*.cu" "${PROJECT_SOURCE_DIR}/*.cpp")
 
-cuda_add_library(KinectFusion STATIC "${KinectFusion_SRCS}")
+cuda_add_library(KinectFusion SHARED "${KinectFusion_SRCS}")
 target_link_libraries(KinectFusion "${OpenCV_LIBS}")
